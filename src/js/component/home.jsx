@@ -2,23 +2,27 @@ import React,{useState} from "react";
 
 
 //include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+
 
 const Home = () => {
 
 
-	const [ semaforoColor , setsemaforoColor ] = useState("semaforoRed");
+	const [ semaforoColor , setsemaforoColor ] = useState();
+	 
 	
 
 
 	return (
 		
-		<div className=" container ">
+		<div className=" container text-center">
 			<div className="semaforo ">
-				<div className="semaforoRed "  onClick={() => setsemaforoColor()} ></div>
-			<div className="semaforoYellow "  onClick={() => setsemaforoColor()}></div>
-			<div className="semaforoGreen " onClick={() => setsemaforoColor()}></div>
+			     <div className={"semaforoRed "+((semaforoColor ==="semaforoRed")? "ligth":"") }  onClick={()=> setsemaforoColor("semaforoRed")} ></div>
+				<div className={"semaforoYellow "+ ((semaforoColor ==="semaforoYellow")? "ligth":"") }  onClick={()=> setsemaforoColor("semaforoYellow")}></div>
+				<div className={"semaforoGreen "+ ((semaforoColor ==="semaforoGreen") ? "ligth":"")}  onClick={()=> setsemaforoColor("semaforoGreen")}></div>
+			
+		       
 			</div>
+			
 			</div>
 
 		
@@ -26,3 +30,5 @@ const Home = () => {
 };
 
 export default Home;
+
+
